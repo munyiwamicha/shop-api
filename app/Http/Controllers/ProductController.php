@@ -62,7 +62,7 @@ class ProductController extends Controller
     function getAllProducts(){
 
         //validatatiom
-        // query
+        // request
         $product = ProductModel::all();
     
         // return to user
@@ -88,7 +88,7 @@ class ProductController extends Controller
 
     //read one Product
     function getProduct($id){
-        //query
+        //request
         $product = ProductModel::find($id);
 
         //response
@@ -121,7 +121,7 @@ class ProductController extends Controller
             "quantity"=>'required',
             "price=>'required'"
         ]);
-        //query
+        //request
         // override the values and save
         $product = ProductModel::find($request->id);
 
