@@ -37,7 +37,7 @@ Route::delete('/supplier', [SupplierController::class, 'deleteSupplier']);
  * 
  */
 Route::post('/login', [AuthenticationController::class, 'login']);
-Route::post('/logout', [AuthenticationController::class, 'login']);
+Route::post('/logout', [AuthenticationController::class, 'logout']);
 
 
 Route::get('/user', function (Request $request) {

@@ -64,7 +64,7 @@ class AuthenticationController extends Controller
 
 
 
-    function destroy(Request $request)
+    function logout(Request $request)
     {
         if (Auth::user()) {
             $request->user()->token()->revoke();
