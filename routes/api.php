@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
-
+use App\Http\Controllers\Auth\AuthenticationController;
 //products
 
 //create product
@@ -32,7 +32,17 @@ Route::put('/supplier', [SupplierController::class, 'updateSupplier']);
 //delete
 Route::delete('/supplier', [SupplierController::class, 'deleteSupplier']);
 
+/**
+ * Register, Login, Logout
+ * 
+ */
+Route::group(['middleware' => ['cors', 'json']], function () {
 
+    Route::post('/signup', [AuthenticationController::class, 'signup']);
+    Route::post('/login', [AuthenticationController::class, 'login']);
+    Route::post('/logout', [AuthenticationController::class, 'logout']);
+
+});
 
 Route::get('/user', function (Request $request) {
     return $request->user();
