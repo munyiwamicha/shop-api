@@ -36,13 +36,13 @@ Route::delete('/supplier', [SupplierController::class, 'deleteSupplier']);
  * Register, Login, Logout
  * 
  */
-Route::group(['middleware' => ['cors', 'json']], function () {
+//Route::group(['middleware' => ['cors', 'json']], function () {
 
     Route::post('/signup', [AuthenticationController::class, 'signup']);
     Route::post('/login', [AuthenticationController::class, 'login']);
     Route::post('/logout', [AuthenticationController::class, 'logout']);
 
-});
+//});
 
 Route::get('/user', function (Request $request) {
     return $request->user();
